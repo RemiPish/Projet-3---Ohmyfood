@@ -1,0 +1,74 @@
+@import "variables";
+.restaurants {
+    padding: $body-padding;
+    margin-top: 30px;
+  background-color: $background-color-gray2;
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .card {
+      flex: 1 1 500px;
+      min-width: 500px;
+      height: 300px;
+      margin-left: 2%;
+      margin-right: 2%;
+      border-radius: 25px;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      & * {
+        text-decoration: none;
+      }
+      &-image {
+        width: 100%;
+        height: 210px;
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        & img {
+          width: 100%;
+          height: auto;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        .new{
+            font-family: $text-font;
+            font-weight: bolder;
+            z-index: 1;
+            position: absolute;
+            background-color: $tertiary-color;
+            color: $new-font-color;
+            display: block;
+            padding: 10px;
+            top:20px;
+            right:10px;
+      }
+     
+      }
+      &-body {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 20px;
+        box-sizing: border-box;
+        line-height: 10px;
+        font-size: $header-font-size;
+        .title {
+          color: black;
+          font-weight: bolder;
+        }
+        p {
+          color: $description-text-font-color;
+        }
+        i{
+            padding-right: 30px;
+            font-size:35px;
+            color: $description-text-font-color;
+
+        }
+      }
+    }
+  }
+}

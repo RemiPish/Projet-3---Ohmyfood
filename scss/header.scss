@@ -1,0 +1,9 @@
+@import "variables";
+header {
+  @include flex-center;
+  border-bottom: solid 10px $background-color-gray3;
+  img {
+    margin: 30px;
+    width: 20%;
+  }
+}

@@ -1,0 +1,56 @@
+@import "variables";
+.description {
+  .location {
+    @include flex-center;
+    background-color: $background-color-gray1;
+    color: $description-text-font-color;
+    label {
+      margin: 20px;
+      span {
+        margin-left: 20px;
+        font-weight: bolder;
+      }
+    }
+  }
+  .restaurant {
+    @include flex-center;
+    flex-direction: column;
+    padding: 50px;
+    background-color: $background-color-gray2;
+    text-align: center;
+    h2 {
+      font-size: $title-font-size;
+      margin-top: 0;
+    }
+    &-text {
+      color: $description-text-font-color;
+      margin-bottom: 20px;
+    }
+    &-button {
+      font-family: $text-font;
+      font-size: $text-font-size;
+      color: $button-text-font-color;
+      border: none;
+      border-radius: 50px;
+      padding: 15px 45px;
+      background-color: $secondary-color;
+      display: block;
+      background-image: linear-gradient(
+        160deg,
+        $secondary-color,
+        $primary-color
+      );
+      box-shadow: 5px 5px 5px $boxshadow-color;
+      &:hover {
+        cursor: pointer;
+        background-image: linear-gradient(
+          to right,
+          $secondary-color 25%,
+          $primary-color 100%
+        );
+        background-position: right center;
+        box-shadow: 5px 5px 5px $boxshadow-dark-color;
+      }
+    }
+  }
+}

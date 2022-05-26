@@ -1,0 +1,26 @@
+@import "variables";
+footer {
+    background-color: $footer-color;
+    color: $footer-font-color;
+    padding: 30px;
+    
+
+    .title {
+      font-family: $title-font;
+      font-size: $header-font-size;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      a {
+        color: $footer-font-color;
+        text-decoration: none;
+        margin: 10px 0;
+      }
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
