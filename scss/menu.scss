@@ -1,0 +1,42 @@
+@import "variables";
+.bg-image img {
+  width: 100%;
+  height: 35vw;
+  object-fit: cover;
+}
+.menu-list {
+  transform: translateY(-50px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: $body-padding;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: $background-color-gray1;
+
+  h1 {
+    font-family: $title-font;
+    font-size: $title-font-size;
+  }
+  &-header {
+    color: $description-text-font-color;
+    font-size: $text-font-size;
+    margin: 20px 0;
+    border-bottom: 5px solid $tertiary-color;
+    width: 60px;
+  }
+  &-title {
+    @include flex-row;
+  }
+  &-box {
+    .title{
+        font-weight: bolder;
+        font-size: $title-font-size;
+    }
+    @include flex-row;
+    padding:30px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 20px 0;
+  }
+}

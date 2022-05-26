@@ -13,7 +13,7 @@ $boxshadow-dark-color: #555555;
 $footer-font-color: white;
 $button-text-font-color: white;
 $description-text-font-color: #5e636e;
-$new-font-color:#628f84;
+$new-font-color: #628f84;
 
 //font
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
@@ -39,3 +39,9 @@ $breakpoint-mobile: 900px;
   align-items: center;
 }
 
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

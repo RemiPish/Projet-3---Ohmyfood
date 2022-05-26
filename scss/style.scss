@@ -1,15 +1,11 @@
 @import "variables";
 @import "header";
 @import "description";
-@import "fonctionnement";
 @import "restaurants";
+@import "menu";
 @import "footer";
 body {
   font-family: $text-font;
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 1200px;
-
-  
-  
 }

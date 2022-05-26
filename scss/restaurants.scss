@@ -1,7 +1,7 @@
 @import "variables";
 .restaurants {
-    padding: $body-padding;
-    margin-top: 30px;
+  padding: $body-padding;
+  margin-top: 30px;
   background-color: $background-color-gray2;
   .container {
     display: flex;
@@ -34,19 +34,18 @@
           left: 50%;
           transform: translate(-50%, -50%);
         }
-        .new{
-            font-family: $text-font;
-            font-weight: bolder;
-            z-index: 1;
-            position: absolute;
-            background-color: $tertiary-color;
-            color: $new-font-color;
-            display: block;
-            padding: 10px;
-            top:20px;
-            right:10px;
-      }
-     
+        .new {
+          font-family: $text-font;
+          font-weight: bolder;
+          z-index: 1;
+          position: absolute;
+          background-color: $tertiary-color;
+          color: $new-font-color;
+          display: block;
+          padding: 10px;
+          top: 20px;
+          right: 10px;
+        }
       }
       &-body {
         display: flex;
@@ -62,13 +61,12 @@
         p {
           color: $description-text-font-color;
         }
-        i{
-            padding-right: 30px;
-            font-size:35px;
-            color: $description-text-font-color;
-
-        }
       }
     }
   }
+}
+.fa-heart {
+  padding-right: 30px;
+  font-size: 35px;
+  color: $description-text-font-color;
 }

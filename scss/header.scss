@@ -1,9 +1,15 @@
 @import "variables";
 header {
   @include flex-center;
-  border-bottom: solid 10px $background-color-gray3;
+  box-sizing: border-box;
   img {
     margin: 30px;
     width: 20%;
   }
+  a {
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    font-size: 30px;
+    }
 }

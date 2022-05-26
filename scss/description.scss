@@ -1,5 +1,6 @@
 @import "variables";
 .description {
+  border-top: solid 10px $background-color-gray3;
   .location {
     @include flex-center;
     background-color: $background-color-gray1;
@@ -51,6 +52,61 @@
         background-position: right center;
         box-shadow: 5px 5px 5px $boxshadow-dark-color;
       }
+    }
+  }
+}
+
+.fonctionnement {
+  padding: $body-padding;
+  margin: 30px 0;
+  ol {
+    list-style: none;
+    display: block;
+  }
+  &-button {
+    display: flex;
+    flex-direction: row;
+    background-color: $background-color-gray2;
+    font-family: $text-font;
+    font-size: $text-font-size;
+    font-weight: bold;
+    margin: 20px 0;
+    border-radius: 20px;
+    border: none;
+    padding: 30px;
+    box-shadow: 5px 5px 5px $boxshadow-color;
+    text-align: center;
+    align-items: center;
+    .number {
+      background-color: $primary-color;
+      color: $button-text-font-color;
+      border-radius: 50%;
+      padding: 10px;
+      margin-left: -40px;
+    }
+    i {
+      color: $description-text-font-color;
+      margin: 0 20px;
+    }
+  }
+}
+
+.bg-image{
+  width: 100%;
+  height: 35vw;
+}
+@media screen and (min-width: $breakpoint-mobile) {
+  .fonctionnement {
+    ol {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    &-button {
+      padding: 15px;
+    }
+    .number {
+      margin-left: -25px;
     }
   }
 }

@@ -14,13 +14,22 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: solid 10px #d3d3d3;
+  box-sizing: border-box;
 }
 header img {
   margin: 30px;
   width: 20%;
 }
+header a {
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+  font-size: 30px;
+}
 
+.description {
+  border-top: solid 10px #d3d3d3;
+}
 .description .location {
   display: flex;
   justify-content: center;
@@ -106,6 +115,11 @@ header img {
   margin: 0 20px;
 }
 
+.bg-image {
+  width: 100%;
+  height: 35vw;
+}
+
 @media screen and (min-width: 900px) {
   .fonctionnement ol {
     display: flex;
@@ -185,10 +199,59 @@ header img {
 .restaurants .container .card-body p {
   color: #5e636e;
 }
-.restaurants .container .card-body i {
+
+.fa-heart {
   padding-right: 30px;
   font-size: 35px;
   color: #5e636e;
+}
+
+.bg-image img {
+  width: 100%;
+  height: 35vw;
+  object-fit: cover;
+}
+
+.menu-list {
+  transform: translateY(-50px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  background-color: #e7e7e7;
+}
+.menu-list h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 25px;
+}
+.menu-list-header {
+  color: #5e636e;
+  font-size: 16px;
+  margin: 20px 0;
+  border-bottom: 5px solid #99e2d0;
+  width: 60px;
+}
+.menu-list-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-list-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background-color: white;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+.menu-list-box .title {
+  font-weight: bolder;
+  font-size: 25px;
 }
 
 footer {
@@ -219,7 +282,6 @@ body {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   margin: 0 auto;
-  max-width: 1200px;
 }
 
 /*# sourceMappingURL=style.css.map */
