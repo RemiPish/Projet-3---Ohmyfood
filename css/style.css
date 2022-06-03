@@ -149,7 +149,7 @@ header a {
 }
 .restaurants .container .card {
   flex: 1 1 500px;
-  height: 300px;
+  height: 230px;
   margin-left: 2%;
   margin-right: 2%;
   border-radius: 25px;
