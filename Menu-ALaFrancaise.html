@@ -13,16 +13,16 @@
   </head>
 
   <body>
-    <header>
-      <a><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
-      <img
-        id="logo-ohmyfood"
-        src="assets/images/logo/ohmyfood.png"
-        alt="ohmyfood logo"
-      />
-    </header>
     <main>
-      <section>
+      <header>
+        <a href="accueil.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+        <img
+          id="logo-ohmyfood"
+          src="assets/images/logo/ohmyfood.png"
+          alt="ohmyfood logo"
+        />
+      </header>
+      <section class="menu-background-color">
         <div class="bg-image">
           <img
             src="assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
@@ -32,88 +32,135 @@
         <div class="menu-list">
           <div class="menu-list-title">
             <h1>À la française</h1>
-            <div>
-              <i class="fa-regular fa-heart" aria-hidden="true"></i>
-            </div>
+            <span class="heart fa-stack">
+              <i class="fa-regular fa-heart fa-stack-1x" aria-hidden="true"></i>
+              <i class="fa-solid fa-heart fa-stack-1x" aria-hidden="true"></i>
+            </span>
           </div>
           <div class="menu-list-header">ENTRÉES</div>
-          <div class="menu-list-box">
-            <div>
-              <div class="title">Tartare de poulpe acidulé</div>
-              <div>Aux zestes d'orange</div>
-            </div>
 
-            <div>25€</div>
-          </div>
           <div class="menu-list-box">
-            <div>
-              <div class="title">Velouté de légumes d'antan</div>
-              <div>Carotte, panais, topinambour</div>
+            <div class="menu-list-text">
+              <div class="menu-nom">
+                <div class="title">Tartare de poulpe acidulé</div>
+                <div>Aux zestes d'orange</div>
+              </div>
+              <div class="price">25€</div>
             </div>
-
-            <div>35€</div>
+            <div class="menu-list-check">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
           </div>
+
           <div class="menu-list-box">
-            <div>
-              <div class="title">Soupe à l'oignon</div>
-              <div>Revisitée</div>
+            <div class="menu-list-text">
+              <div class="menu-nom">
+                <div class="title">Velouté de légumes d'antan</div>
+                <div>Carotte, panais, topinambour</div>
+              </div>
+              <div class="price">35€</div>
             </div>
-
-            <div>20€</div>
+            <div class="menu-list-check">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
           </div>
+
+          <div class="menu-list-box">
+            <div class="menu-list-text">
+              <div class="menu-nom">
+                <div class="title">Soupe à l'oignon</div>
+                <div>Revisitée</div>
+              </div>
+              <div class="price">20€</div>
+            </div>
+            <div class="menu-list-check">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
+          </div>
+
           <div class="menu-list-header">PLATS</div>
 
           <div class="menu-list-box">
-            <div>
-              <div class="title">Coquilles Saint-Jacques</div>
-              <div>Accompagnées d'une purée de panais</div>
+            <div class="menu-list-text">
+              <div class="menu-nom">
+                <div class="title">Coquilles Saint-Jacques</div>
+                <div>Accompagnées d'une purée de panais</div>
+              </div>
+              <div class="price">40€</div>
             </div>
-
-            <div>40€</div>
-          </div>
-          <div class="menu-list-box">
-            <div>
-              <div class="title">Magret de canard</div>
-              <div>Et parmentier de pommes de terre</div>
+            <div class="menu-list-check">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
             </div>
-
-            <div>35€</div>
           </div>
 
           <div class="menu-list-box">
-            <div>
-              <div class="title">Pigeonneau d'Ille-et-Vilaine</div>
-              <div>Sur son lit de gnocchis aux légumes</div>
+            <div class="menu-list-text">
+              <div class="menu-nom">
+                <div class="title">Magret de canard</div>
+                <div>Et parmentier de pommes de terre</div>
+              </div>
+              <div class="price">35€</div>
             </div>
+            <div class="menu-list-check">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
+          </div>
 
-            <div>44€</div>
+          <div class="menu-list-box">
+            <div class="menu-list-text">
+              <div class="menu-nom">
+                <div class="title">Pigeonneau d'Ille-et-Vilaine</div>
+                <div>Sur son lit de gnocchis aux légumes</div>
+              </div>
+              <div class="price">44€</div>
+            </div>
+            <div class="menu-list-check">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
           </div>
 
           <div class="menu-list-header">DESSERTS</div>
-          <div class="menu-list-box">
-            <div>
-              <div class="title">Pétales de violettes glacés</div>
-              <div>Et purée de noisettes</div>
-            </div>
 
-            <div>18€</div>
-          </div>
           <div class="menu-list-box">
-            <div>
-              <div class="title">Fondant au chocolat</div>
-              <div>Revisité</div>
+            <div class="menu-list-text">
+              <div class="menu-nom">
+                <div class="title">Pétales de violettes glacés</div>
+                <div>Et purée de noisettes</div>
+              </div>
+              <div class="price">18€</div>
             </div>
+            <div class="menu-list-check">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
+          </div>
 
-            <div>22€</div>
-          </div>
           <div class="menu-list-box">
-            <div>
-              <div class="title">Millefeuille croustillant</div>
-              <div>Myrtilles et pâte d'amande</div>
+            <div class="menu-list-text">
+              <div class="menu-nom">
+                <div class="title">Fondant au chocolat</div>
+                <div>Revisité</div>
+              </div>
+              <div class="price">22€</div>
             </div>
-            <div>23€</div>
+            <div class="menu-list-check">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
           </div>
-          <button class="fonctionnement-button">Commander</button>
+
+          <div class="menu-list-box">
+            <div class="menu-list-text">
+              <div class="menu-nom">
+                <div class="title">Millefeuille croustillant</div>
+                <div>Myrtilles et pâte d’amande</div>
+              </div>
+              <div class="price">23€</div>
+            </div>
+            <div class="menu-list-check">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <button class="restaurant-button menu-button">Commander</button>
         </div>
       </section>
     </main>

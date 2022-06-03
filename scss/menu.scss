@@ -1,10 +1,15 @@
 @import "variables";
-.bg-image img {
+.bg-image {
   width: 100%;
-  height: 35vw;
-  object-fit: cover;
+  height: 500px;
+  img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+  }
 }
 .menu-list {
+  margin-top: -50px;
   transform: translateY(-50px);
   display: flex;
   justify-content: center;
@@ -25,18 +30,80 @@
     border-bottom: 5px solid $tertiary-color;
     width: 60px;
   }
+  &-box {
+    @include flex-row;
+    opacity: 0;
+    animation: fadeinItems 1s forwards;
+    cursor: pointer;
+    margin: 20px 0;
+    background-color: white;
+    border-radius: 20px;
+    height: 90px;
+    overflow: hidden;
+    &:hover .menu-list-check {
+      transform: translateX(0%);
+    }
+    &:hover i {
+      transform: rotate(720deg);
+    }
+
+    .menu-list-text {
+      @include flex-row;
+      flex: 100%;
+      margin-left: 20px;
+      .menu-nom {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+    .menu-list-check {
+      flex: 10%;
+      height: 90px;
+      background-color: $tertiary-color;
+      transform: translateX(100%);
+      transition: transform 1s ease-in-out;
+      i {
+        font-size: $check-icon-size;
+        font-weight: bold;
+        color: $check-icon-color;
+        margin-top: 30px;
+        margin-left: 25px;
+        transition: transform 1s ease-in-out;
+      }
+    }
+    .price {
+      margin-right: 20px;
+    }
+    .title {
+      font-weight: bolder;
+    }
+  }
+  @for $i from 1 through 10 {
+    &-box:nth-child(#{$i}n) {
+      animation-delay: #{$i * 100}ms;
+    }
+  }
+
+  @keyframes fadeinItems {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   &-title {
     @include flex-row;
   }
-  &-box {
-    .title{
-        font-weight: bolder;
-        font-size: $title-font-size;
-    }
-    @include flex-row;
-    padding:30px;
-    background-color: white;
-    border-radius: 20px;
-    margin: 20px 0;
+  .menu-button {
+    width: 300px;
+    margin: 50px 0;
+    align-self: center;
   }
+}
+.menu-background-color {
+  background-color: $background-color-gray1;
 }

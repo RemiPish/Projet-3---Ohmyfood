@@ -7,5 +7,32 @@
 body {
   font-family: $text-font;
   box-sizing: border-box;
-  margin: 0 auto;
+  main {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+}
+.heart {
+  cursor: pointer;
+  .fa-solid {
+    visibility: hidden;
+    transition: transform 1s ease-in-out;
+  }
+  .fa-regular {
+    visibility: visible;
+    transition: transform 1s ease-in-out;
+  }
+  &:hover .fa-solid {
+    visibility: visible;
+    background: $color-gradient;
+    transform: scale(1.5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &:hover .fa-regular {
+    visibility: hidden;
+    transform: scale(1.5);
+  }
 }

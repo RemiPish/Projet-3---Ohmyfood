@@ -18,13 +18,17 @@ header {
 }
 header img {
   margin: 30px;
-  width: 20%;
+  width: 150px;
 }
 header a {
   cursor: pointer;
-  position: absolute;
-  left: 10px;
+  position: relative;
+  right: 350px;
   font-size: 30px;
+}
+
+.fa-arrow-left {
+  color: black;
 }
 
 .description {
@@ -35,14 +39,17 @@ header a {
   justify-content: center;
   align-items: center;
   background-color: #e7e7e7;
-  color: #5e636e;
 }
 .description .location label {
   margin: 20px;
 }
-.description .location label span {
+.description .location label input {
+  background: transparent;
+  border: none;
   margin-left: 20px;
   font-weight: bolder;
+  font-family: "Roboto", sans-serif;
+  color: #5e636e;
 }
 .description .restaurant {
   display: flex;
@@ -61,7 +68,8 @@ header a {
   color: #5e636e;
   margin-bottom: 20px;
 }
-.description .restaurant-button {
+
+.restaurant-button {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   color: white;
@@ -73,7 +81,7 @@ header a {
   background-image: linear-gradient(160deg, #ff79da, #9356dc);
   box-shadow: 5px 5px 5px #7a7a7a;
 }
-.description .restaurant-button:hover {
+.restaurant-button:hover {
   cursor: pointer;
   background-image: linear-gradient(to right, #ff79da 25%, #9356dc 100%);
   background-position: right center;
@@ -109,15 +117,11 @@ header a {
   border-radius: 50%;
   padding: 10px;
   margin-left: -40px;
+  width: 20px;
 }
 .fonctionnement-button i {
   color: #5e636e;
   margin: 0 20px;
-}
-
-.bg-image {
-  width: 100%;
-  height: 35vw;
 }
 
 @media screen and (min-width: 900px) {
@@ -145,7 +149,6 @@ header a {
 }
 .restaurants .container .card {
   flex: 1 1 500px;
-  min-width: 500px;
   height: 300px;
   margin-left: 2%;
   margin-right: 2%;
@@ -158,7 +161,7 @@ header a {
 }
 .restaurants .container .card-image {
   width: 100%;
-  height: 210px;
+  height: 150px;
   position: relative;
   overflow: hidden;
   border-top-left-radius: 25px;
@@ -206,13 +209,18 @@ header a {
   color: #5e636e;
 }
 
+.bg-image {
+  width: 100%;
+  height: 500px;
+}
 .bg-image img {
   width: 100%;
-  height: 35vw;
+  height: 450px;
   object-fit: cover;
 }
 
 .menu-list {
+  margin-top: -50px;
   transform: translateY(-50px);
   display: flex;
   justify-content: center;
@@ -233,25 +241,114 @@ header a {
   border-bottom: 5px solid #99e2d0;
   width: 60px;
 }
+.menu-list-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  animation: fadeinItems 1s forwards;
+  cursor: pointer;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 20px;
+  height: 90px;
+  overflow: hidden;
+}
+.menu-list-box:hover .menu-list-check {
+  transform: translateX(0%);
+}
+.menu-list-box:hover i {
+  transform: rotate(720deg);
+}
+.menu-list-box .menu-list-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 100%;
+  margin-left: 20px;
+}
+.menu-list-box .menu-list-text .menu-nom {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menu-list-box .menu-list-check {
+  flex: 10%;
+  height: 90px;
+  background-color: #99e2d0;
+  transform: translateX(100%);
+  transition: transform 1s ease-in-out;
+}
+.menu-list-box .menu-list-check i {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  margin-top: 30px;
+  margin-left: 25px;
+  transition: transform 1s ease-in-out;
+}
+.menu-list-box .price {
+  margin-right: 20px;
+}
+.menu-list-box .title {
+  font-weight: bolder;
+}
+.menu-list-box:nth-child(1n) {
+  animation-delay: 100ms;
+}
+.menu-list-box:nth-child(2n) {
+  animation-delay: 200ms;
+}
+.menu-list-box:nth-child(3n) {
+  animation-delay: 300ms;
+}
+.menu-list-box:nth-child(4n) {
+  animation-delay: 400ms;
+}
+.menu-list-box:nth-child(5n) {
+  animation-delay: 500ms;
+}
+.menu-list-box:nth-child(6n) {
+  animation-delay: 600ms;
+}
+.menu-list-box:nth-child(7n) {
+  animation-delay: 700ms;
+}
+.menu-list-box:nth-child(8n) {
+  animation-delay: 800ms;
+}
+.menu-list-box:nth-child(9n) {
+  animation-delay: 900ms;
+}
+.menu-list-box:nth-child(10n) {
+  animation-delay: 1000ms;
+}
+@keyframes fadeinItems {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .menu-list-title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.menu-list-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-  background-color: white;
-  border-radius: 20px;
-  margin: 20px 0;
+.menu-list .menu-button {
+  width: 300px;
+  margin: 50px 0;
+  align-self: center;
 }
-.menu-list-box .title {
-  font-weight: bolder;
-  font-size: 25px;
+
+.menu-background-color {
+  background-color: #e7e7e7;
 }
 
 footer {
@@ -281,7 +378,34 @@ footer .container i {
 body {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
+}
+body main {
   margin: 0 auto;
+  max-width: 1200px;
+}
+
+.heart {
+  cursor: pointer;
+}
+.heart .fa-solid {
+  visibility: hidden;
+  transition: transform 1s ease-in-out;
+}
+.heart .fa-regular {
+  visibility: visible;
+  transition: transform 1s ease-in-out;
+}
+.heart:hover .fa-solid {
+  visibility: visible;
+  background: linear-gradient(160deg, #ff79da, #9356dc);
+  transform: scale(1.5);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.heart:hover .fa-regular {
+  visibility: hidden;
+  transform: scale(1.5);
 }
 
 /*# sourceMappingURL=style.css.map */
