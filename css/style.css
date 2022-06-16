@@ -15,6 +15,8 @@ header {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  position: relative;
+  margin: 20px 0px;
 }
 header img {
   margin: 30px;
@@ -22,8 +24,8 @@ header img {
 }
 header a {
   cursor: pointer;
-  position: relative;
-  right: 350px;
+  position: absolute;
+  left: 15px;
   font-size: 30px;
 }
 
@@ -44,12 +46,14 @@ header a {
   margin: 20px;
 }
 .description .location label input {
-  background: transparent;
-  border: none;
+  background: white;
+  border: 1px solid black;
+  border-radius: 5px;
   margin-left: 20px;
   font-weight: bolder;
   font-family: "Roboto", sans-serif;
   color: #5e636e;
+  overflow: hidden;
 }
 .description .restaurant {
   display: flex;
@@ -256,6 +260,11 @@ header a {
   overflow: hidden;
 }
 .menu-list-box:hover .menu-list-check {
+  flex: 85%;
+  transition: all 1s ease-in-out;
+}
+.menu-list-box:hover .menu-list-check {
+  flex: 15%;
   transform: translateX(0%);
 }
 .menu-list-box:hover i {
@@ -268,13 +277,15 @@ header a {
   align-items: center;
   flex: 100%;
   margin-left: 20px;
+  min-width: 100px;
 }
-.menu-list-box .menu-list-text .menu-nom {
+.menu-list-box .menu-list-text div {
   white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 .menu-list-box .menu-list-check {
+  display: hidden;
   flex: 10%;
   height: 90px;
   background-color: #99e2d0;
@@ -378,6 +389,7 @@ footer .container i {
 body {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
+  margin: 0;
 }
 body main {
   margin: 0 auto;
@@ -389,23 +401,28 @@ body main {
 }
 .heart .fa-solid {
   visibility: hidden;
-  transition: transform 1s ease-in-out;
+  transform: scale(0);
+  opacity: 0;
+  transition: all 1.2s ease 0ms;
 }
 .heart .fa-regular {
   visibility: visible;
-  transition: transform 1s ease-in-out;
+  opacity: 1;
+  transition: all 1.2s ease 0ms;
 }
 .heart:hover .fa-solid {
+  opacity: 1;
   visibility: visible;
   background: linear-gradient(160deg, #ff79da, #9356dc);
-  transform: scale(1.5);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transform: scale(1.2);
+  transition: all 1.2s ease 0ms;
 }
 .heart:hover .fa-regular {
   visibility: hidden;
-  transform: scale(1.5);
+  transition: all 1.2s ease 0ms;
 }
 
 /*# sourceMappingURL=style.css.map */

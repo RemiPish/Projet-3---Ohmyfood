@@ -41,6 +41,11 @@
     height: 90px;
     overflow: hidden;
     &:hover .menu-list-check {
+      flex: 85%;
+      transition: all 1s ease-in-out;
+    }
+    &:hover .menu-list-check {
+      flex: 15%;
       transform: translateX(0%);
     }
     &:hover i {
@@ -51,13 +56,15 @@
       @include flex-row;
       flex: 100%;
       margin-left: 20px;
-      .menu-nom {
+      min-width: 100px;
+      div {
         white-space: nowrap;
-        text-overflow: ellipsis;
         overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
     .menu-list-check {
+      display: hidden;
       flex: 10%;
       height: 90px;
       background-color: $tertiary-color;

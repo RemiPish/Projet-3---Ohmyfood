@@ -7,32 +7,39 @@
 body {
   font-family: $text-font;
   box-sizing: border-box;
+  margin: 0;
   main {
     margin: 0 auto;
     max-width: 1200px;
   }
 }
+
 .heart {
   cursor: pointer;
   .fa-solid {
     visibility: hidden;
-    transition: transform 1s ease-in-out;
+    transform: scale(0);
+    opacity: 0;
+    transition: all 1.2s ease 0ms;
   }
   .fa-regular {
     visibility: visible;
-    transition: transform 1s ease-in-out;
+    opacity: 1;
+    transition: all 1.2s ease 0ms;
   }
   &:hover .fa-solid {
+    opacity: 1;
     visibility: visible;
     background: $color-gradient;
-    transform: scale(1.5);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transform: scale(1.2);
+    transition: all 1.2s ease 0ms;
   }
 
   &:hover .fa-regular {
     visibility: hidden;
-    transform: scale(1.5);
+    transition: all 1.2s ease 0ms;
   }
 }

@@ -8,12 +8,14 @@
     label {
       margin: 20px;
       input {
-        background: transparent;
-        border: none;
+        background: white;
+        border: 1px solid black;
+        border-radius: 5px;
         margin-left: 20px;
         font-weight: bolder;
         font-family: $text-font;
         color: $description-text-font-color;
+        overflow: hidden;
       }
     }
   }
