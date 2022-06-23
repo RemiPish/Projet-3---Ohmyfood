@@ -1,4 +1,3 @@
-@import "variables";
 @import "header";
 @import "description";
 @import "restaurants";
@@ -14,32 +13,38 @@ body {
   }
 }
 
+@keyframes heartFill {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .heart {
+  position: relative;
   cursor: pointer;
   .fa-solid {
-    visibility: hidden;
-    transform: scale(0);
     opacity: 0;
-    transition: all 1.2s ease 0ms;
   }
   .fa-regular {
-    visibility: visible;
     opacity: 1;
-    transition: all 1.2s ease 0ms;
   }
   &:hover .fa-solid {
     opacity: 1;
-    visibility: visible;
     background: $color-gradient;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transform: scale(1.2);
-    transition: all 1.2s ease 0ms;
+    animation: heartFill 1.7s;
   }
 
   &:hover .fa-regular {
-    visibility: hidden;
-    transition: all 1.2s ease 0ms;
+    opacity: 0;
+    transition: opacity 1.2s ease 0ms;
+  }
+  &-menu{
+    margin-right: 25px;
   }
 }

@@ -1,38 +1,36 @@
 @import "variables";
 .description {
-  border-top: solid 10px $background-color-gray3;
+  box-shadow: 0px -9px 0px 0px $background-color-gray3;
   .location {
     @include flex-center;
     background-color: $background-color-gray1;
-
     label {
       margin: 20px;
       input {
-        background: white;
-        border: 1px solid black;
-        border-radius: 5px;
+        background: transparent;
+        border: none;
         margin-left: 20px;
         font-weight: bolder;
         font-family: $text-font;
         color: $description-text-font-color;
-        overflow: hidden;
+        font-size: $text-font-size;
       }
     }
   }
-  .restaurant {
-    @include flex-center;
-    flex-direction: column;
-    padding: 50px;
-    background-color: $background-color-gray2;
-    text-align: center;
-    h2 {
-      font-size: $title-font-size;
-      margin-top: 0;
-    }
-    &-text {
-      color: $description-text-font-color;
-      margin-bottom: 20px;
-    }
+}
+.restaurant {
+  @include flex-center;
+  flex-direction: column;
+  padding: 50px;
+  background-color: $background-color-gray2;
+  text-align: center;
+  h2 {
+    font-size: $title-font-size;
+    margin-top: 0;
+  }
+  &-text {
+    color: $description-text-font-color;
+    margin-bottom: 20px;
   }
 }
 
