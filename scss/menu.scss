@@ -41,54 +41,74 @@
     height: 90px;
     overflow: hidden;
     &:hover .menu-list-check {
-      flex: 85%;
-      transition: all 1s ease-in-out;
-    }
-    &:hover .menu-list-check {
-      flex: 15%;
-      transform: translateX(0%);
+      animation: checkSlide 0.7s forwards;
     }
     &:hover i {
-      transform: rotate(720deg);
+      animation: checkSpin 0.7s forwards;
     }
 
     .menu-list-text {
-      @include flex-row;
-      flex: 100%;
+      display: flex;
+      flex-direction: column;
       margin-left: 20px;
-      min-width: 100px;
+      flex: 80%;
+      width: 200px;
+      min-width: 0;
       div {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
+      .title {
+        font-weight: bolder;
+      }
+      .menu-list-nom {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
     }
     .menu-list-check {
-      display: hidden;
-      flex: 10%;
       height: 90px;
+      opacity: 0;
       background-color: $tertiary-color;
-      transform: translateX(100%);
-      transition: transform 1s ease-in-out;
       i {
         font-size: $check-icon-size;
         font-weight: bold;
         color: $check-icon-color;
         margin-top: 30px;
         margin-left: 25px;
-        transition: transform 1s ease-in-out;
       }
     }
     .price {
       margin-right: 20px;
     }
-    .title {
-      font-weight: bolder;
-    }
   }
   @for $i from 1 through 10 {
     &-box:nth-child(#{$i}n) {
       animation-delay: #{$i * 100}ms;
+    }
+  }
+
+  @keyframes checkSlide {
+    from {
+      opacity: 0;
+      flex: 0%;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      flex: 30%;
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes checkSpin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(720deg);
     }
   }
 

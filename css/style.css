@@ -259,37 +259,36 @@ header a {
   overflow: hidden;
 }
 .menu-list-box:hover .menu-list-check {
-  flex: 85%;
-  transition: all 1s ease-in-out;
-}
-.menu-list-box:hover .menu-list-check {
-  flex: 15%;
-  transform: translateX(0%);
+  animation: checkSlide 0.7s forwards;
 }
 .menu-list-box:hover i {
-  transform: rotate(720deg);
+  animation: checkSpin 0.7s forwards;
 }
 .menu-list-box .menu-list-text {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex: 100%;
+  flex-direction: column;
   margin-left: 20px;
-  min-width: 100px;
+  flex: 80%;
+  width: 200px;
+  min-width: 0;
 }
 .menu-list-box .menu-list-text div {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.menu-list-box .menu-list-text .title {
+  font-weight: bolder;
+}
+.menu-list-box .menu-list-text .menu-list-nom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .menu-list-box .menu-list-check {
-  display: hidden;
-  flex: 10%;
   height: 90px;
+  opacity: 0;
   background-color: #99e2d0;
-  transform: translateX(100%);
-  transition: transform 1s ease-in-out;
 }
 .menu-list-box .menu-list-check i {
   font-size: 30px;
@@ -297,13 +296,9 @@ header a {
   color: white;
   margin-top: 30px;
   margin-left: 25px;
-  transition: transform 1s ease-in-out;
 }
 .menu-list-box .price {
   margin-right: 20px;
-}
-.menu-list-box .title {
-  font-weight: bolder;
 }
 .menu-list-box:nth-child(1n) {
   animation-delay: 100ms;
@@ -334,6 +329,26 @@ header a {
 }
 .menu-list-box:nth-child(10n) {
   animation-delay: 1000ms;
+}
+@keyframes checkSlide {
+  from {
+    opacity: 0;
+    flex: 0%;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    flex: 30%;
+    transform: translateX(0%);
+  }
+}
+@keyframes checkSpin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(720deg);
+  }
 }
 @keyframes fadeinItems {
   0% {
