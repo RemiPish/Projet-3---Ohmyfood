@@ -1,8 +1,8 @@
 @import "variables";
 .restaurants {
-  max-width: 900px;
   padding: $body-padding;
-  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 900px;
   background-color: $background-color-gray2;
   .container {
     display: flex;

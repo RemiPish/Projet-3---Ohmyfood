@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   main {
+    z-index: 1;
     margin: 0 auto;
     max-width: 1200px;
   }
@@ -44,7 +45,87 @@ body {
     opacity: 0;
     transition: opacity 1.2s ease 0ms;
   }
-  &-menu{
+  &-menu {
     margin-right: 25px;
+  }
+}
+
+.loading {
+  z-index: 2;
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: $background-color-gray1;
+  animation: loadingEnd 0s ease-in 3s forwards;
+  &-logo {
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-43%, -50%);
+    animation: loadingLogo 3s ease-in-out;
+  }
+
+  &-circle {
+    position: absolute;
+    top: 60%;
+    border-radius: 50%;
+    z-index: 3;
+    background-color: $primary-color;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    animation: loadingAnim 3s ease-in-out;
+  }
+  .circle1 {
+    left: 35%;
+    animation-delay: 0s;
+  }
+  .circle2 {
+    left: 50%;
+    animation-delay: 0.2s;
+  }
+  .circle3 {
+    left: 65%;
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes loadingAnim {
+  0%,
+  100% {
+    transform: scale(0.1);
+    background-color: $primary-color;
+  }
+  25%,
+  75% {
+    transform: scale(1);
+    background-color: $secondary-color;
+  }
+  50% {
+    transform: scale(0.1);
+    background-color: $tertiary-color;
+  }
+}
+@keyframes loadingEnd {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes loadingLogo {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
   }
 }
