@@ -26,8 +26,7 @@
   &-header {
     color: $description-text-font-color;
     font-size: $text-font-size;
-    margin: 20px 0;
-    border-bottom: 5px solid $tertiary-color;
+    margin: 10px 0;
     width: 60px;
   }
   &-box {
@@ -35,7 +34,7 @@
     opacity: 0;
     animation: fadeinItems 1s forwards;
     cursor: pointer;
-    margin: 20px 0;
+    margin: 10px 0;
     background-color: white;
     border-radius: 20px;
     height: 90px;
@@ -133,4 +132,9 @@
 }
 .menu-background-color {
   background-color: $background-color-gray1;
+}
+.underline-title{
+  width:60%;
+  height:5px;
+  background-color: $tertiary-color;
 }

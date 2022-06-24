@@ -240,8 +240,7 @@ header a {
 .menu-list-header {
   color: #5e636e;
   font-size: 16px;
-  margin: 20px 0;
-  border-bottom: 5px solid #99e2d0;
+  margin: 10px 0;
   width: 60px;
 }
 .menu-list-box {
@@ -252,7 +251,7 @@ header a {
   opacity: 0;
   animation: fadeinItems 1s forwards;
   cursor: pointer;
-  margin: 20px 0;
+  margin: 10px 0;
   background-color: white;
   border-radius: 20px;
   height: 90px;
@@ -374,6 +373,12 @@ header a {
 
 .menu-background-color {
   background-color: #e7e7e7;
+}
+
+.underline-title {
+  width: 60%;
+  height: 5px;
+  background-color: #99e2d0;
 }
 
 footer {
