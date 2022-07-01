@@ -29,12 +29,12 @@
 
 @keyframes loadingAnim {
   0% {
-    transform: rotate(0deg)  scale(1);
-    border-color: #9356dc transparent #99e2d0 transparent;
+    transform: rotate(0deg) scale(1);
+    border-color: $primary-color transparent $tertiary-color transparent;
   }
   100% {
-    transform: rotate(360deg)  scale(1.5);
-    border-color: #99e2d0 transparent #9356dc transparent;
+    transform: rotate(360deg) scale(2.5);
+    border-color: $tertiary-color transparent $primary-color transparent;
   }
 }
 @keyframes loadingEnd {
