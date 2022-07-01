@@ -1,4 +1,3 @@
-@import "variables";
 .bg-image {
   width: 100%;
   height: 500px;
@@ -8,6 +7,12 @@
     object-fit: cover;
   }
 }
+
+.menu-main {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
 .menu-list {
   margin-top: -50px;
   transform: translateY(-50px);
@@ -40,7 +45,9 @@
     height: 90px;
     overflow: hidden;
     &:hover .menu-list-check {
-      animation: checkSlide 0.7s forwards;
+      opacity: 1;
+      flex: 25%;
+      transform: translateX(0%);
     }
     &:hover i {
       animation: checkSpin 0.7s forwards;
@@ -69,7 +76,9 @@
     }
     .menu-list-check {
       height: 90px;
-      opacity: 0;
+      flex: 0%;
+      transform: translateX(100%);
+      transition: all 0.5s linear;
       background-color: $tertiary-color;
       i {
         font-size: $check-icon-size;
@@ -89,38 +98,6 @@
     }
   }
 
-  @keyframes checkSlide {
-    from {
-      opacity: 0;
-      flex: 0%;
-      transform: translateX(100%);
-    }
-    to {
-      opacity: 1;
-      flex: 30%;
-      transform: translateX(0%);
-    }
-  }
-
-  @keyframes checkSpin {
-    from {
-      transform: rotate(0);
-    }
-    to {
-      transform: rotate(720deg);
-    }
-  }
-
-  @keyframes fadeinItems {
-    0% {
-      opacity: 0;
-      transform: translateY(100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
   &-title {
     @include flex-row;
   }
@@ -133,8 +110,8 @@
 .menu-background-color {
   background-color: $background-color-gray1;
 }
-.underline-title{
-  width:60%;
-  height:5px;
+.underline-title {
+  width: 60%;
+  height: 5px;
   background-color: $tertiary-color;
 }

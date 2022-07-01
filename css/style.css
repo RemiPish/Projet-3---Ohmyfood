@@ -1,13 +1,89 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,500");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,500");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,500");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,500");
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,500");
+@keyframes heartFill {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes loadingEnd {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+@keyframes loadingLogo {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes loadingAnim {
+  0% {
+    transform: rotate(0deg) scale(1);
+    border-color: #9356dc transparent #99e2d0 transparent;
+  }
+  100% {
+    transform: rotate(360deg) scale(1.5);
+    border-color: #99e2d0 transparent #9356dc transparent;
+  }
+}
+@keyframes loadingEnd {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+@keyframes loadingLogo {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+@keyframes checkSlide {
+  from {
+    opacity: 0;
+    flex: 0%;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    flex: 30%;
+    transform: translateX(0%);
+  }
+}
+@keyframes checkSpin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeinItems {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 header {
   display: flex;
   justify-content: center;
@@ -17,8 +93,7 @@ header {
   margin: 20px 0px;
 }
 header img {
-  margin: 30px;
-  width: 150px;
+  width: 200px;
 }
 header a {
   cursor: pointer;
@@ -46,6 +121,7 @@ header a {
 .description .location label input {
   background: transparent;
   border: none;
+  width: 150px;
   margin-left: 20px;
   font-weight: bolder;
   font-family: "Roboto", sans-serif;
@@ -142,7 +218,6 @@ header a {
 .restaurants {
   padding: 20px;
   margin: 0 auto;
-  max-width: 900px;
   background-color: #f2f2f2;
 }
 .restaurants .container {
@@ -184,7 +259,7 @@ header a {
   z-index: 1;
   position: absolute;
   background-color: #99e2d0;
-  color: #628f84;
+  color: #1a993d;
   display: block;
   padding: 10px;
   top: 20px;
@@ -220,6 +295,11 @@ header a {
   width: 100%;
   height: 450px;
   object-fit: cover;
+}
+
+.menu-main {
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 .menu-list {
@@ -258,7 +338,9 @@ header a {
   overflow: hidden;
 }
 .menu-list-box:hover .menu-list-check {
-  animation: checkSlide 0.7s forwards;
+  opacity: 1;
+  flex: 25%;
+  transform: translateX(0%);
 }
 .menu-list-box:hover i {
   animation: checkSpin 0.7s forwards;
@@ -286,7 +368,9 @@ header a {
 }
 .menu-list-box .menu-list-check {
   height: 90px;
-  opacity: 0;
+  flex: 0%;
+  transform: translateX(100%);
+  transition: all 0.5s linear;
   background-color: #99e2d0;
 }
 .menu-list-box .menu-list-check i {
@@ -328,36 +412,6 @@ header a {
 }
 .menu-list-box:nth-child(10n) {
   animation-delay: 1000ms;
-}
-@keyframes checkSlide {
-  from {
-    opacity: 0;
-    flex: 0%;
-    transform: translateX(100%);
-  }
-  to {
-    opacity: 1;
-    flex: 30%;
-    transform: translateX(0%);
-  }
-}
-@keyframes checkSpin {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(720deg);
-  }
-}
-@keyframes fadeinItems {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 .menu-list-title {
   display: flex;
@@ -410,22 +464,14 @@ footer .container i {
 body {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
 }
-body main {
+body .index-page {
   z-index: 1;
   margin: 0 auto;
   max-width: 1200px;
 }
 
-@keyframes heartFill {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 .heart {
   position: relative;
   cursor: pointer;
@@ -465,67 +511,31 @@ body main {
 }
 .loading-logo {
   z-index: 3;
+  width: 40vw;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-43%, -50%);
+  transform: translate(-50%, -50%);
   animation: loadingLogo 3s ease-in-out;
 }
-.loading-circle {
-  position: absolute;
-  top: 60%;
-  border-radius: 50%;
-  z-index: 3;
-  background-color: #9356dc;
-  height: 50px;
-  width: 50px;
+.loading-ring {
   display: inline-block;
-  animation: loadingAnim 3s ease-in-out;
-}
-.loading .circle1 {
-  left: 35%;
-  animation-delay: 0s;
-}
-.loading .circle2 {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
   left: 50%;
-  animation-delay: 0.2s;
+  transform: translate(-50%, -50%);
 }
-.loading .circle3 {
-  left: 65%;
-  animation-delay: 0.4s;
-}
-
-@keyframes loadingAnim {
-  0%, 100% {
-    transform: scale(0.1);
-    background-color: #9356dc;
-  }
-  25%, 75% {
-    transform: scale(1);
-    background-color: #ff79da;
-  }
-  50% {
-    transform: scale(0.1);
-    background-color: #99e2d0;
-  }
-}
-@keyframes loadingEnd {
-  to {
-    width: 0;
-    height: 0;
-    overflow: hidden;
-  }
-}
-@keyframes loadingLogo {
-  0% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.1;
-  }
+.loading-ring:after {
+  content: "  ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  animation: loadingAnim 3s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */

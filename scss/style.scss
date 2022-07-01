@@ -1,3 +1,5 @@
+@import "variables";
+@import "animation";
 @import "header";
 @import "description";
 @import "restaurants";
@@ -6,20 +8,11 @@
 body {
   font-family: $text-font;
   box-sizing: border-box;
-  margin: 0;
-  main {
+  margin: 0 auto;
+  .index-page {
     z-index: 1;
     margin: 0 auto;
     max-width: 1200px;
-  }
-}
-
-@keyframes heartFill {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 
@@ -62,70 +55,31 @@ body {
   animation: loadingEnd 0s ease-in 3s forwards;
   &-logo {
     z-index: 3;
+    width: 40vw;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-43%, -50%);
+    transform: translate(-50%, -50%);
     animation: loadingLogo 3s ease-in-out;
   }
 
-  &-circle {
-    position: absolute;
-    top: 60%;
-    border-radius: 50%;
-    z-index: 3;
-    background-color: $primary-color;
-    height: 50px;
-    width: 50px;
+  &-ring {  
     display: inline-block;
-    animation: loadingAnim 3s ease-in-out;
-  }
-  .circle1 {
-    left: 35%;
-    animation-delay: 0s;
-  }
-  .circle2 {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
     left: 50%;
-    animation-delay: 0.2s;
+    transform: translate(-50%, -50%);
   }
-  .circle3 {
-    left: 65%;
-    animation-delay: 0.4s;
-  }
-}
-
-@keyframes loadingAnim {
-  0%,
-  100% {
-    transform: scale(0.1);
-    background-color: $primary-color;
-  }
-  25%,
-  75% {
-    transform: scale(1);
-    background-color: $secondary-color;
-  }
-  50% {
-    transform: scale(0.1);
-    background-color: $tertiary-color;
-  }
-}
-@keyframes loadingEnd {
-  to {
-    width: 0;
-    height: 0;
-    overflow: hidden;
-  }
-}
-
-@keyframes loadingLogo {
-  0% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.1;
+  &-ring:after {
+    content: "  ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    animation: loadingAnim 3s ease-in-out;
   }
 }
