@@ -1,3 +1,4 @@
+//la partie description sur la page index
 .description {
   box-shadow: 0px -9px 0px 0px $background-color-gray3;
   .location {
@@ -93,6 +94,7 @@
   }
 }
 
+//version mobile
 @media screen and (min-width: $breakpoint-mobile) {
   .fonctionnement {
     ol {

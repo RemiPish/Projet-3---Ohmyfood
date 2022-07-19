@@ -1,3 +1,4 @@
+//scss principal
 @import "variables";
 @import "animation";
 @import "header";
@@ -16,6 +17,7 @@ body {
   }
 }
 
+//l'icone coeur et ses animations
 .heart {
   position: relative;
   cursor: pointer;
@@ -43,6 +45,7 @@ body {
   }
 }
 
+//animation chargement a la page index
 .loading {
   z-index: 2;
   position: fixed;
