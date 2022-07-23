@@ -45,9 +45,20 @@
     border-radius: 20px;
     height: 90px;
     overflow: hidden;
+    &:hover {
+      .menu-list-text {
+        width: calc(100% - 90px);
+        .title {
+          width: calc(100% - 30px);
+        }
+        .menu-list-description {
+          width: calc(100% - 90px);
+        }
+      }
+    }
+
     &:hover .menu-list-check {
       opacity: 1;
-      flex: 25%;
       transform: translateX(0%);
     }
     &:hover i {
@@ -58,30 +69,39 @@
       display: flex;
       flex-direction: column;
       margin-left: 20px;
-      flex: 80%;
-      width: 200px;
-      min-width: 0;
-      div {
+      justify-content: space-between;
+      width: 100%;
+      transition: width 0.5s linear;
+      .desc-price {
+        display: flex;
+        justify-content: space-between;
+        gap:10px;
+        .menu-list-description {
+          width: 305px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .title {
+        max-width: 265px;
+        font-weight: bolder;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-      }
-      .title {
-        font-weight: bolder;
-      }
-      .menu-list-nom {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
       }
     }
 
     //la partie check verte sur chaque plat
     .menu-list-check {
-      height: 90px;
-      flex: 0%;
+      position: absolute;
+      right: 0;
+      height: 100%;
+      width: 80px;
       transform: translateX(100%);
       transition: all 0.5s linear;
+      align-content: center;
+      justify-content: center;
       background-color: $tertiary-color;
       i {
         font-size: $check-icon-size;
@@ -92,7 +112,8 @@
       }
     }
     .price {
-      margin-right: 20px;
+      font-weight: bold;
+      margin-right: 30px;
     }
   }
   //anim defile menu qui apparait l'un apres l'autre
